@@ -10,7 +10,6 @@
  */
 angular
   .module('onlineClientApp', [
-    'ngAnimate',
     'ngRoute'
   ])
   .config(function ($routeProvider) {
