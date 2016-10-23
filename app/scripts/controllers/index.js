@@ -1,17 +1,12 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name onlineClientApp.controller:IndexCtrl
- * @description
- * # IndexCtrl
- * Controller of the onlineClientApp
- */
 angular.module('onlineClientApp')
-  .controller('IndexCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('IndexCtrl', ['$scope', '$location', 'authService', function ($scope, $location, authService) {
+
+    $scope.logOut = function () {
+      authService.logOut();
+      $location.path('/home');
+    }
+
+    $scope.authentication = authService.authentication;
+  }]);
